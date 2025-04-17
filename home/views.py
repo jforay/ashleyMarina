@@ -31,12 +31,7 @@ def marriott(request):
     return render(request, 'home/marriott.html')
 
 def FAQ(request):
-    return render(request, 'home/FAQ.html')
+    return render(request, 'home/faq.html')
+
 def contact(request):
     return render(request, 'home/contact.html')
-
-def listings(request):
-    return  render(request, 'home/listings.html')
-
-def owners(request):
-    return render(request, 'home/owners.html')
