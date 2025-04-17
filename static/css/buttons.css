@@ -1,0 +1,23 @@
+/* General button styling */
+.link-btn {
+    display: inline-block;
+    width: auto;
+    padding: 10px 20px; /* Padding inside the button */
+    background-color: #194056; /* Button background color */
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1rem; /* Font size */
+    font-weight: bold; /* Make text bold */
+    border-radius: 5px; /* Rounded corners */
+    border: 2px solid white; /* Border around the button */
+    text-align: center; /* Center the text */
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+/* Button hover effect */
+.link-btn:hover {
+    background-color:rgb(152, 199, 225); /* Darker blue on hover */
+    color: #ffffff; /* Ensure the text stays white */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    cursor: pointer; /* Change cursor to pointer */
+}

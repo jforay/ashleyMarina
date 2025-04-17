@@ -1,0 +1,128 @@
+
+main {
+    background-color: rgb(152, 199, 225);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(152, 199, 225);
+}
+footer {
+    background-color: #194056;
+    color: white;
+    padding: 20px 0;
+}
+
+footer a img {   
+    width: 30px;
+    padding: 0 5px;
+}
+
+.logo {
+    justify-content: center;
+    height: 100px;
+    text-align: center;
+}
+
+.footer-info {
+    text-align: center; /* Center the text inside the footer info */
+    flex: 2;
+}
+
+.logo-link {
+    flex: 1;
+    text-align: center;
+}
+
+.button-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px;
+    width: 100%;
+}
+
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-row img {
+    max-width: 250px;
+    min-width: 150px;
+    height: auto;
+}
+
+.footer-column {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+.footer-column-side {
+    flex: 1; /* Assigns 1 part width to each side column */
+}
+
+.footer-column-middle {
+    flex: 2; /* Assigns 2 parts width to the middle column */
+}
+
+
+
+/* Custom styles for alignment and fonts */
+.h1, .p {
+    color: white; /* Text color */
+}
+
+
+
+.marina-name {
+    font-size: 3rem !important;
+    font-weight: bold !important;
+    font-family: 'Georgia', serif !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    color: white !important;
+    margin: 0 !important;
+}
+
+.address-container p {
+    font-size: 1.2rem !important;
+    color: white !important;
+    margin: 0 !important;
+}
+
+.navbar {
+    background-color: #194056;;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-nav {
+    width: 100%;
+    justify-content: flex-end; /* This will align the nav items to the right */
+}
+ 
+.navbar-toggler {
+    border: none !important;
+    padding: 0.5rem 1rem;
+    color: white;
+
+}
+
+
+
+.navbar-nav .nav-link:hover {
+    background-color: rgb(152, 199, 225);
+    color: black !important;
+}
+
+.shrink-text {
+    font-size: clamp(10px, 2vw, 24px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

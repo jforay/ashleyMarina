@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container my-0 py-4 text-center">
+    <h1>We Are Now Accepting Annual Leases!</h1>
+    <br>
+    <h3>Please email Dockmaster@myashleymarina.com for more information</h3>
+    <br><br>
+    <div class="row">
+      <!-- Column 1 -->
+        <div class="col-md-6 text-center">
+            <h3>Transient Reservations</h3>
+            <p>Short-term dockage available. Reserve your spot Today!</p>
+            <a href="{% url 'dockwa' %}" class="link-btn">Dockwa</a>
+        </div>
+  
+      <!-- Column 2 -->
+        <div class="col-md-6 text-center">
+            <h3>Boat Slip Hotel Room Combo</h3>
+            <p>For more information on our partnership with the Charleston Marriott, click here!</p>
+            <a href="{% url 'marriott' %}" class="link-btn">Marriott Rates</a>
+        </div>
+    </div>
+</div>
+  
+ 
+<div class="home">    
+    {% for category in categories %}
+     <section class="category-section" style="background-image: url('{{ category.image_url }}')"><!--;background-repeat: no-repeat;background-size: cover; background-position: center; min-height: 500px;"> -->
+        <h2 class="category-title">{{ category.name }}</h2>
+        <a href="{{ category.link }}">
+
+            <img src="{% static 'images/logos/ashley_logo_light.png' %}" type="image/png" style="width: 300px;">
+            <h5 class="category-link">Click Here</h5>
+
+
+        </a>
+    </section>
+    {% endfor %}
+</div>
+
+<div class="container my-0 py-4 text-center">
+    <h1>Creating a Community on The Water</h1>
+    <p style="line-height: 1.8; margin-bottom: 1.5rem;">The Harborage at Ashley Marina Condominium Association was formed as dockominium in 2006 and is the Marina slip-owners association that governs Ashley Marina's commercial and residential use.  The marina is governed by the Master Deed and By-Laws set forth in the Articles of Incorporation for the Harborage at Ashley Marina Condominium Association and the Rules and Regulations that are amended from time to time by marina management and Board of Directors.</p>
+    <p style="line-height: 1.8; margin-bottom: 1.5rem;">Current Board of Directors include D. Cooke Jr, R. Baker, D. Sutton, K. Smith, J. Mazzoli</p>
+    <p style="line-height: 1.8; margin-bottom: 1.5rem;">The Harborage at Ashley Marina is one of the premier marina facilities with slips available for individual ownership in the Charleston Area.  Membership in the association is available through slip ownership and does require ongoing financial contribution via quarterly dues as determined by the quarterly assessment.  While we invite any boat enthusiast to dock with us, residential privileges are limited.  As a reminder, all vessels entering the marina must keep a minimum of $500k liability on their vessel and include the Marina added as an additional insured, and all owners and tenants must abide by the Rules & Regulations.  For slip purchase availability, check out the Listing page.</p>
+</div>
+
+{% endblock %}
+
