@@ -1,0 +1,236 @@
+{% extends "base.html" %}
+
+{% block title %}Accessibilities{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'home/css/faq.css' %}">
+<script src="{% static 'home/js/faq.js' %}" defer></script>
+
+<div class="container my-0 text-center">
+    <h1 style="text-decoration: underline;">Frequently Asked Questions:</h1>
+    <br>
+    <div class="faq-container my-0">
+        <div class="faq-item">
+            <div class="faq-question">
+                What are the Annual Regime Fees for a slip?
+                <span class="arrow">▼</span>
+            
+            </div>
+            <div class="faq-answer">
+                <p>Annual Regime Assessments for The Harborage at Ashley Marina Condominium Association are split into quarterly payments and are subject to change annually.</p>
+                <p>To view the Regime Fees, please click the link below:</p>
+                <div class="pdf-link">
+                    <a href="{% static 'home/pdfs/your-file.pdf' %}" target="_blank">
+                        <img src="{% static 'images/logos/pdf-icon.png' %}" alt="PDF Icon" style="width: 60px;">
+                        <span>Annual Regime Fees</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div> 
+        <div class="faq-item">
+            <div class="faq-question">
+                When are Annual Fees Due and How Should I Pay Them?
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                
+                <p>Annual Regime Assessments for The Harborage at Ashley Marina Condominium Association are split into quarterly payments that are due on these dates:</p>
+
+                <ul>
+                    <li>January 1</li>
+                    <li>April 1</li>
+                    <li>July 1</li>
+                    <li>October 1</li>
+                </ul>
+                
+                <p><strong>Note:</strong> Payments are due on or before the 1st day of the Quarter and will be assessed a late fee if payment is not received within 30 days of the due date and will be applied to each subsequent month thereafter. The Late Fee will be calculated based on any outstanding amount due which will be assessed at 1.5% (per month) with a minimum charge of $25.00. Regime accounts that are ≥ 90 days past due will be sent to collections and legal fees passed through to the account.</p>
+                
+                <p><strong>Administrative Fee Upon Sale or Transfer:</strong> Effective 2/23/24, an administrative fee of $450 along with an initiation fee, effective 9/1/2024, shall be charged to anyone purchasing a slip and shall be paid to the Association at closing. The administration fee recognizes the substantial time, efforts and resources devoted to initial conversations with marina staff during the inquiry stages (prior to purchase), responding to legal firms for buyers, marina introductions, review of Rules and Regulations, parking pass (returns and issuing of new pass), insurance review and documentation, updating contact information for slip owners, and QuickBooks/accounting modifications. The new owner initiation fee is established at $25/foot (effective Sept 1, 2024), in addition to the existing $450 administrative fee.</p>
+                
+                <p>The initiation fee calculation is as follows: for example, a fifty-five foot slip transfer will have an initiation fee of $1,375.00, plus the administrative fee of $450.00 for a total of $1,825.00.</p>
+                
+                <p>Contact information must be updated regularly with the Association Manager. All invoices are now sent electronically via email and must be paid by bank account (1% fee) or credit card (3% fee).</p>
+                
+                <p><strong>For payment-related questions, contact:</strong></p>
+                
+                <address>
+                    Attn: The Harborage at Ashley Marina Condominium Association<br>
+                    c/o Accounting<br>
+                    33 Lockwood Drive<br>
+                    Charleston, SC 29401-1181<br>
+                    Email: <a href="mailto:Accounting@myashleymarina.com">Accounting@myashleymarina.com</a><br>
+                    Office Phone: <a href="tel:8432849942">843-284-9942</a>
+                </address>
+                
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Do You Perform Waste Pump-Outs?
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>Yes! We are a proud grant participant of the Clean Vessel Act and do perform free pump-out services for owners.</p>
+                <p>Dockside pump-outs can be performed, by staff only, next to the diesel fueling area on the T-Dock. This is available 8:00 AM – 5:00 PM, daily by calling <a href="tel:8432849942">843-284-9942</a>.</p>
+                <p>A mobile pump-out boat is available, staff and weather permitting, on Thursday mornings by reservation only. Email <a href="mailto:maintenance@MyAshleyMarina.com">maintenance@MyAshleyMarina.com</a> to schedule. Include name, contact number, vessel slip, vessel name, vessel length, tank size, and permission to board vessel. This information is required for our CVA grant.</p>
+                <p><strong>Reminder:</strong> It is against both State and Federal laws to discharge raw, untreated sewage from any watercraft into the waters of South Carolina.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                What are the Annual Property Taxes For a Slip?
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>Property taxes are the responsibility of the owner and are set by the City of Charleston.</p>
+                <p>To view previous year's property taxes, use the Real Property Record Search available online on Charleston County's website.</p>
+                <p>Search by entering: <em>"33 Lockwood Dr Slip LU" + the locker unit number</em> in the Street Address field.</p>
+            </div>
+
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Can I Lease a Slip?
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>Yes. Call HAMCA at <a href="tel:8432849942">843-284-9942</a> for transient, monthly, or long-term leasing options.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Do I Have To Carry Insurance?
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>The annual assessment paid by members includes property insurance for docks and limited common elements.</p>
+                <p>All vessels must carry an additional $500k liability policy naming The Harborage at Ashley Marina Condominium Association as an insured party.</p>
+                <p>Charter vessels must carry an additional $500k for a total of $1,000,000 in liability coverage.</p>
+                <p>Bareboat charters require a separate $1,000,000 liability policy naming the marina as additionally insured. Documentation must be submitted annually or per charter.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                What Are The By-Laws And Restrictions Of The Marina?
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>The Master Deed for The Harborage at Ashley Marina includes governing by-laws and amendments:</p>
+                <ul>
+                    <li>Master Deed (Including Amendments 1-4)</li>
+                    <li>Master Deed (5th Amendment)</li>
+                    <li>Articles of Incorporation</li>
+                    <li>By-laws</li>
+                </ul>
+                <div class="pdf-link">
+                    <a href="{% static 'home/pdfs/master-deed.pdf' %}" target="_blank">
+                        <img src="{% static 'images/logos/pdf-icon.png' %}" alt="PDF Icon" class="pdf-icon">
+                        <span>Download Documents</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                What Are The Marina Rules And Regulations?
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>The rules govern all marina activity and are enforced by the Board and staff to ensure safety and respect for shared spaces.</p>
+                <p>Effective 1/1/2016: New live-aboard moratorium in place.</p>
+                <p>Effective 7/1/2024: Charter businesses (rental slips only) must pay monthly operating fees:</p>
+                <ul>
+                    <li>1-6 passengers: $250</li>
+                    <li>7-12 passengers: $350</li>
+                    <li>13-25 passengers: $500</li>
+                    <li>26-50 passengers: $1,000</li>
+                </ul>
+                <p>Funds from these fees support additional dock carts, trash bins, staff, and services.</p>
+                <div class="pdf-link">
+                    <a href="{% static 'home/pdfs/rules-regulations.pdf' %}" target="_blank">
+                        <img src="{% static 'images/logos/pdf-icon.png' %}" alt="PDF Icon" class="pdf-icon">
+                        <span>Rules and Regulations</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Does The Marina Have An Operational Manual And/Or Emergency Response Plan?
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>Yes. The marina has a comprehensive manual that includes procedures for operations, maintenance, and emergency response.</p>
+                <p>Click Below to view.</p>
+                <div class="pdf-link">
+                    <a href="{% static 'home/pdfs/emergency-plan.pdf' %}" target="_blank">
+                        <img src="{% static 'images/logos/pdf-icon.png' %}" alt="PDF Icon" class="pdf-icon">
+                        <span>Emergency Response Manual</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                May I Lease My Slip To A Tenant?
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>Yes. However, self-managed owners must provide a signed lease to the Association Manager.</p>
+                <p>Tenants must comply with all Rules & Regulations. Violations are subject to penalties.</p>
+                <p>Approved leases must use the Standard Lease Agreement (wet storage only).</p>
+                <p>If leasing to a charter company, management must handle the arrangement.</p>
+                <p><strong>Governing Clause:</strong> Deed Section 9.3 – Leasing of Units</p>
+                <p>All leases must be in writing and may be reviewed or revoked by the Board if regulations are violated.</p>
+                <div class="pdf-link">
+                    <a href="{% static 'home/pdfs/standard-lease.pdf' %}" target="_blank">
+                        <img src="{% static 'images/logos/pdf-icon.png' %}" alt="PDF Icon" class="pdf-icon">
+                        <span>Standard Lease Agreement</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                What is the Marina's Hurricane Emergency Plan?
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>The Harborage at Ashley Marina and AMH Management have developed a hurricane emergency plan to reduce risks during major weather events.</p>
+                <div class="pdf-link">
+                    <a href="{% static 'home/pdfs/hurricane-plan.pdf' %}" target="_blank">
+                        <img src="{% static 'images/logos/pdf-icon.png' %}" alt="PDF Icon" class="pdf-icon">
+                        <span>Hurricane Emergency Plan</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Can I Offer My Vessel As A Short Term Rental?
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>No! Due to the City of Charleston's short-term rental regulations, offering your vessel or slip as a short-term rental is prohibited.</p>
+                <p>Violations will result in fines and potential removal from the marina without warning.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Can I Offer Charters On My Vessel?
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, but you must carry the required insurance coverage and comply with all marina rules.</p>
+                <p>Charter guests are not permitted to park in any visitor or owner spots at the marina.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

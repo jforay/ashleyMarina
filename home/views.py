@@ -10,7 +10,7 @@ def home(request):
         {"name":"Marina Amenities", "image_url":"/static/home/images/categories/amenities.jpg", "link":"#"},
         {"name":"Dockwa", "image_url":"/static/home/images/categories/dockwa.png", "link":"#"},
         {"name":"Marriott Rates", "image_url":"/static/home/images/categories/marriott.jpg", "link":"#"},
-        {"name":"FAQ", "image_url":"/static/home/images/categories/FAQ.png", "link":"#"},
+        {"name":"FAQ", "image_url":"/static/home/images/categories/FAQ.jpeg", "link":"#"},
         {"name":"Event Calendar", "image_url":"/static/home/images/categories/calendar.jpg", "link":"#"},
         {"name":"Contact", "image_url":"/static/home/images/categories/contact.jpg", "link":"#"},
         {"name":"Listings", "image_url":"/static/home/images/categories/listings.jpg", "link":"#"},
