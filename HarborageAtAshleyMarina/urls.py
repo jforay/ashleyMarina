@@ -22,4 +22,6 @@ urlpatterns = [
     path('',include('home.urls')),
     path('owners/', include('owners.urls')),
     path('listings/',include('listings.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),  # <-- this adds login/logout URLs
+
 ]

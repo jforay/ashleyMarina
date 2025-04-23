@@ -1,6 +1,7 @@
 
 main {
     background-color: rgb(152, 199, 225);
+    min-height: 65vh;
 }
 
 body {

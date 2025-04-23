@@ -2,24 +2,25 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.shortcuts import render
+from django.urls import reverse
 
 # Create your views here.
 
 def home(request):
     categories = [
-        {"name":"Marina Amenities", "image_url":"/static/home/images/categories/amenities.jpg", "link":"#"},
-        {"name":"Dockwa", "image_url":"/static/home/images/categories/dockwa.png", "link":"#"},
-        {"name":"Marriott Rates", "image_url":"/static/home/images/categories/marriott.jpg", "link":"#"},
-        {"name":"FAQ", "image_url":"/static/home/images/categories/FAQ.jpeg", "link":"#"},
-        {"name":"Event Calendar", "image_url":"/static/home/images/categories/calendar.jpg", "link":"#"},
-        {"name":"Contact", "image_url":"/static/home/images/categories/contact.jpg", "link":"#"},
-        {"name":"Listings", "image_url":"/static/home/images/categories/listings.jpg", "link":"#"},
-        {"name":"Owners", "image_url":"/static/home/images/categories/owners.jpg", "link":"#"},
+        {"name":"Marina Amenities", "image_url":"/static/home/images/categories/amenities.jpg", "link":reverse('amenities')},
+        {"name":"Dockwa", "image_url":"/static/home/images/categories/dockwa.jpeg", "link":reverse('dockwa')},
+        {"name":"Event Calendar", "image_url":"/static/home/images/categories/calendar.jpg", "link":reverse('cal')},
+        {"name":"Listings", "image_url":"/static/home/images/categories/listings.jpg", "link":reverse('listings')},
+        {"name":"Marriott Rates", "image_url":"/static/home/images/categories/marriott.jpg", "link":reverse('marriott')},  
+        {"name":"FAQ", "image_url":"/static/home/images/categories/FAQ.jpeg", "link":reverse('FAQ')},
+        {"name":"Contact", "image_url":"/static/home/images/categories/contact.jpeg", "link":reverse('contact')},
+        {"name":"Owners", "image_url":"/static/home/images/categories/owners.jpg", "link":reverse('owners')},
     ]
     return render(request, 'home/home.html', {'categories':categories})
 
 def amenities(request):
-    return render(request, 'homoe/amenities.html')
+    return render(request, 'home/amenities.html')
 
 def cal(request):
     return render(request, 'home/cal.html')

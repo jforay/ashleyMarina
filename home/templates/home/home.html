@@ -24,20 +24,160 @@
     </div>
 </div>
   
- 
-<div class="home">    
+<div class="home">
     {% for category in categories %}
-    <section class="category-section" style="background-image: url('{{ category.image_url }}')">
-        <h2 class="category-title">{{ category.name }}</h2>
-        <a href="{{ category.link }}">
+        {% if category.name == "Dockwa" %}
+        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
+            <a href="{{ category.link }}">
+                <div class="category-overlay">
+                    <img src="{% static 'images/logos/ashley_logo_light.png' %}" alt="Ashley Marina Logo" class="category-logo" style="width: 400px;">
+                    <h5 class="category-link">Click Here</h5>
+                </div>
+            </a>
+        </section>   
+        {% elif category.name == "FAQ" %}
+        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
+            <h2 class="category-title">{{ category.name }}</h2>
 
-            <img src="{% static 'images/logos/ashley_logo_light.png' %}" type="image/png" style="width: 300px;">
-            <h5 class="category-link">Click Here</h5>
+            <a href="{{ category.link }}">
+                <div class="category-overlay">
+                    <img src="{% static 'images/logos/ashley_logo_light.png' %}" alt="Ashley Marina Logo" class="category-logo" style="width: 400px;">
+                    <h5 class="category-link">Click Here</h5>
+                </div>
+            </a>
+        </section>
+        {% elif category.name == "Contact" %}
+        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
+            <a href="{{ category.link }}">
+                <div class="category-overlay" style="margin-top:100px">
+                    <img src="{% static 'images/logos/ashley_logo_light.png' %}" alt="Ashley Marina Logo" class="category-logo" style="width: 400px;">
+                    <h5 class="category-link">Click Here</h5>
+                </div>
+            </a>
+        </section> 
+        {% else %}
+        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
+            <h2 class="category-title">{{ category.name }}</h2>
+            <a href="{{ category.link }}">
+                <div class="category-overlay">
+                    <img src="{% static 'images/logos/ashley_logo_light.png' %}" alt="Ashley Marina Logo" class="category-logo" style="width: 400px;">
+                    <h5 class="category-link">Click Here</h5>
+                </div>
+            </a>
+        </section>
+        {% endif %}
+    {% endfor %} 
+</div>
+<!-- <div class="home">    
+    {% for category in categories %}
+        {% if category.name ==  'Marina Amenities' %}
+        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
+            <h2 class="category-title">{{ category.name }}</h2>
+            <a href="{{ category.link }}">
+
+                <img src="{% static 'images/logos/ashley_logo_light.png' %}" type="image/png" style="width: 300px;">
+                <h5 class="category-link" style="left: 50%; bottom: 25%;">Click Here</h5>
 
 
-        </a>
-    </section>
-    {% endfor %}
+            </a>
+        </section>
+        {% elif  category.name == 'Dockwa' %}
+        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
+            <h2 class="category-title">{{ category.name }}</h2>
+            <a href="{{ category.link }}">
+    
+                <img src="{% static 'images/logos/ashley_logo_light.png' %}" type="image/png" style="width: 300px;">
+                <h5 class="category-link" style="left: 50%; bottom: 25%;">Click Here</h5>
+    
+    
+            </a>
+        </section>
+
+        {% elif  category.name == 'Marriott Rates' %}
+        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
+            <h2 class="category-title">{{ category.name }}</h2>
+            <a href="{{ category.link }}">
+    
+                <img src="{% static 'images/logos/ashley_logo_light.png' %}" type="image/png" style="width: 300px;">
+                <h5 class="category-link" style="left: 50%; bottom: 25%;">Click Here</h5>
+    
+    
+            </a>
+        </section>
+
+        {% elif  category.name == 'FAQ' %}
+        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
+            <h2 class="category-title">{{ category.name }}</h2>
+            <a href="{{ category.link }}">
+    
+                <img src="{% static 'images/logos/ashley_logo_light.png' %}" type="image/png" style="width: 300px;">
+                <h5 class="category-link" style="left: 50%; bottom: 25%;">Click Here</h5>
+    
+    
+            </a>
+        </section>
+
+        {% elif  category.name == 'Event Calendar' %}
+        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
+            <h2 class="category-title">{{ category.name }}</h2>
+            <a href="{{ category.link }}">
+    
+                <img src="{% static 'images/logos/ashley_logo_light.png' %}" type="image/png" style="width: 300px;">
+                <h5 class="category-link" style="left: 50%; bottom: 25%;">Click Here</h5>
+    
+    
+            </a>
+        </section>
+
+        {% elif  category.name == 'Contact'%}
+        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
+            <h2 class="category-title">{{ category.name }}</h2>
+            <a href="{{ category.link }}">
+    
+                <img src="{% static 'images/logos/ashley_logo_light.png' %}" type="image/png" style="width: 300px;">
+                <h5 class="category-link" style="left: 50%; bottom: 25%;">Click Here</h5>
+    
+    
+            </a>
+        </section>
+
+        {% elif  category.name == 'Listings' %}
+        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
+            <h2 class="category-title">{{ category.name }}</h2>
+            <a href="{{ category.link }}">
+    
+                <img src="{% static 'images/logos/ashley_logo_light.png' %}" type="image/png" style="width: 300px;">
+                <h5 class="category-link" style="left: 50%; bottom: 25%;">Click Here</h5>
+    
+    
+            </a>
+        </section>
+
+        {% elif  category.name == 'owners' %}
+        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
+            <h2 class="category-title">{{ category.name }}</h2>
+            <a href="{{ category.link }}">
+    
+                <img src="{% static 'images/logos/ashley_logo_light.png' %}" type="image/png" style="width: 300px;">
+                <h5 class="category-link" style="left: 50%; bottom: 25%;">Click Here</h5>
+    
+    
+            </a>
+        </section>
+        {% else %}
+        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
+            <h2 class="category-title">{{ category.name }}</h2>
+            <a href="{{ category.link }}">
+    
+                <img src="{% static 'images/logos/ashley_logo_light.png' %}" type="image/png" style="width: 300px;">
+                <h5 class="category-link" style="left: 50%; bottom: 25%;">Click Here</h5>
+    
+    
+            </a>
+        </section>
+        {% endif %}
+
+    {% endfor %} -->
 </div>
 
 <div class="container my-0 py-4 text-center">
