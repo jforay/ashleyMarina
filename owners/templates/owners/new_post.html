@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-4">
+  <a href="{% url 'category_detail' category.pk %}" class="btn btn-outline-secondary mb-4">← Back to {{ category.name }}</a>
+  <div class="card shadow">
+    <div class="card-body">
+      <h3 class="mb-4">New Post in {{ category.name }}</h3>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Submit Post</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
