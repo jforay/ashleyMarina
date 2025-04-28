@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+<link rel="stylesheet" href="{% static 'home/css/home.css' %}">
 
 {% block content %}
 <div class="container my-0 py-4 text-center">
@@ -29,10 +30,10 @@
         {% if category.name == "Dockwa" %}
         <section class="category-section" style="background-image: url('{{ category.image_url }}')">
             <a href="{{ category.link }}">
-                <div class="category-overlay">
-                    <img src="{% static 'images/logos/ashley_logo_light.png' %}" alt="Ashley Marina Logo" class="category-logo" style="width: 400px;">
-                    <h5 class="category-link">Click Here</h5>
-                </div>
+                
+                <img src="{% static 'images/logos/Ashley_Logo_edited.png' %}" alt="Ashley Marina Logo" class="category-logo" style="width: 400px;">
+                <h5 class="category-link">Click Here</h5>
+                
             </a>
         </section>   
         {% elif category.name == "FAQ" %}
@@ -40,17 +41,17 @@
             <h2 class="category-title">{{ category.name }}</h2>
 
             <a href="{{ category.link }}">
-                <div class="category-overlay">
-                    <img src="{% static 'images/logos/ashley_logo_light.png' %}" alt="Ashley Marina Logo" class="category-logo" style="width: 400px;">
-                    <h5 class="category-link">Click Here</h5>
-                </div>
+               
+                <img src="{% static 'images/logos/Ashley_Logo_edited.png' %}" alt="Ashley Marina Logo" class="category-logo" style="width: 400px;">
+                <h5 class="category-link">Click Here</h5>
+                
             </a>
         </section>
         {% elif category.name == "Contact" %}
         <section class="category-section" style="background-image: url('{{ category.image_url }}')">
             <a href="{{ category.link }}">
                 <div class="category-overlay" style="margin-top:100px">
-                    <img src="{% static 'images/logos/ashley_logo_light.png' %}" alt="Ashley Marina Logo" class="category-logo" style="width: 400px;">
+                    <img src="{% static 'images/logos/Ashley_Logo_edited.png' %}" alt="Ashley Marina Logo" class="category-logo" style="width: 400px;">
                     <h5 class="category-link">Click Here</h5>
                 </div>
             </a>
@@ -60,7 +61,7 @@
             <h2 class="category-title">{{ category.name }}</h2>
             <a href="{{ category.link }}">
                 <div class="category-overlay">
-                    <img src="{% static 'images/logos/ashley_logo_light.png' %}" alt="Ashley Marina Logo" class="category-logo" style="width: 400px;">
+                    <img src="{% static 'images/logos/Ashley_Logo_edited.png' %}" alt="Ashley Marina Logo" class="category-logo" style="width: 400px;">
                     <h5 class="category-link">Click Here</h5>
                 </div>
             </a>
