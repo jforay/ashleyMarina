@@ -3,9 +3,27 @@
 {% block title %}Marriott Rates{% endblock %}
 {% load static %}
 {% block content %}
-<div class="container text-center">
-    <h1>Marriott Rates</h1>
-    <img src="{% static 'home/images/marriott.jpg' %}" alt="Marriott" style="height: 500px; width: 100%; object-fit:cover;">
+
+
+<!-- Header -->
+<div class="container-fluid p-0">
+    <div style="background-color: #0078A0; padding: 2rem;">
+        <h2 class="text-white text-center">Marriott Rates</h2>
+    </div>
+</div>
+
+<!-- Full Width Image -->
+<div class="container-fluid p-0">
+    <img src="{% static 'home/images/categories/marriott.jpg' %}" class="img-fluid w-100" alt="Charleston Marriott">
+</div>
+
+<!-- Paragraph + Button -->
+<div class="container text-center my-0">
+    <br>
+    <p class="lead">
+        Current owners, slip renters, and transient guests staying at the Harborage at Ashley Marina may enjoy a discounted rate at the Charleston Courtyard Marriott. To use this discount, you must be currently staying at or visiting the Harborage at Ashley Marina. After you successfully book with us, you will receive a confirmation email that contains a link to book a room at the Marriott for 25% off!
+    </p>
+    <img src="{% static 'home/images/amenities/charlestonwaterfrontmarriott.png' %}" class="img-fluid w-75" alt="Charleston Marriott">
 
 </div>
 
