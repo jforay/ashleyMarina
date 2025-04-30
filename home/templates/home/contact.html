@@ -1,8 +1,77 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block title %}Contact Us{% endblock %}
+{% block title %}Contact{% endblock %}
 
 {% block content %}
-{% load static %}
+<!-- Header -->
+<div class="container-fluid p-0">
+    <div style="background-color: #0078A0; padding: 2rem;">
+        <h2 class="text-white text-center">Contact</h2>
+    </div>
+</div>
+
+<div class="container text-center py-5" style="background-color: #B3D6E3;">
+    <p class="fs-5">
+        For Transient, Monthly and Long Term slip leasing 
+        <a href="{% url 'dockwa' %}" class="fw-bold text-danger">CLICK HERE</a>
+    </p>
+
+    <h4 class="fst-italic text-primary">The Harborage at Ashley Marina</h4>
+
+    <p class="mb-1">Dock Master and staff are available to assist current and future Regime members<br>
+        with maintenance, accounting, Rules & Regulations questions, and slip purchase information.
+    </p>
+    <p class="mb-1">To contact the Dock Master, use the form below.</p>
+    <p>Alternatively, email 
+        <a href="mailto:Dockmaster@myashleymarina.com">Dockmaster@myashleymarina.com</a> 
+        or phone (843) 284-9942.
+    </p>
+
+    <p class="fw-bold text-uppercase mt-4">
+        LEASING AVAILABILITY REQUESTS USING THE FORM BELOW WILL BE IGNORED!
+    </p>
+</div>
+
+<div class="container text-center">
+    <div class="form-container">
+        <h1>For Wet Slip Information:</h1>
+        <form method="post">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                {{ form.name.label_tag }}
+                {{ form.name }}
+            </div>
+    
+            <div class="form-group">
+                {{ form.phone.label_tag }}
+                {{ form.phone }}
+            </div>
+    
+            <div class="form-group">
+                {{ form.email.label_tag }}
+                {{ form.email }}
+            </div>
+    
+            <div class="form-group">
+                {{ form.boat_info.label_tag }}
+                {{ form.boat_info }}
+            </div>
+    
+            <div class="form-group">
+                {{ form.boat_length.label_tag }}
+                {{ form.boat_length }}
+            </div>
+    
+            <div class="form-group">
+                {{ form.message.label_tag }}
+                {{ form.message }}
+            </div>
+    
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</div>
 
 {% endblock %}

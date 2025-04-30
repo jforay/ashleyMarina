@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render,redirect
 from django.contrib.auth.decorators import login_required,user_passes_test
-from .forms import CategoryForm
+from .forms import CategoryForm,PostForm
 from .models import Category,Post
 # Create your views here.
 @login_required(login_url='/accounts/login/')

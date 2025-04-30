@@ -1,10 +1,6 @@
-from django.shortcuts import render
-
-# Create your views here.
-from django.shortcuts import render
 from django.urls import reverse
-
-# Create your views here.
+from django.shortcuts import render, redirect
+from .forms import ContactMessageForm
 
 def home(request):
     categories = [
@@ -34,5 +30,14 @@ def marriott(request):
 def FAQ(request):
     return render(request, 'home/faq.html')
 
+
 def contact(request):
-    return render(request, 'home/contact.html')
+    if request.method == 'POST':
+        form = ContactMessageForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'home/contact_success.html')  # simple thank you page
+    else:
+        form = ContactMessageForm()
+
+    return render(request, 'home/contact.html', {'form': form})
