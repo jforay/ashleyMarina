@@ -1,8 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container py-4">
-    <h2 class="mb-4 text-center">Available Wet Slips</h2>
+<!-- Header -->
+<div class="container-fluid p-0">
+    <div style="background-color: #0078A0; padding: 2rem;">
+        <h2 class="text-white text-center">Available Wet Slips</h2>
+    </div>
+</div>
 
+<div class="container py-4">
     {% if user.is_superuser %}
         <div class="text-center mb-4">
             <a href="{% url 'new_listing' %}" class="btn btn-outline-primary">+ Add New Listing</a>

@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
+<!-- Header -->
+<div class="container-fluid p-0">
+    <div style="background-color: #0078A0; padding: 2rem;">
+        <h2 class="text-white text-center">Owners Forum</h2>
+    </div>
+</div>
+
 <div class="container py-4">
-  <h2 class="mb-4 text-center">Owners Forum</h2>
 
   {% if user.is_superuser %}
     <div class="text-center mb-4">
