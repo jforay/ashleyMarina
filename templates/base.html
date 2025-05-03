@@ -36,71 +36,133 @@
     <!-- Bootstrap Navbar -->
         <header>
             
-            
-            <nav class="navbar navbar-light" style="background-color: #194056;">
+            <div class="d-none d-md-block">
+
+                <nav class="navbar navbar-light" style="background-color: #194056;">
+                    
+                    <a class="d-flex align-items-center" href="{% url 'home' %}" style="max-width: 30%;">
+                        <img src="{% static 'images/logos/ashley_logo_transparent.png' %}" alt="Logo" style="height: 100px;">
+                    </a>
+
+                    <div class="address-container text-center mx-3">
+                        <h1 class="marina-name">Harborage At Ashley Marina</h1>
+                        <p>Charleston, South Carolina</p>
+                    </div>
+
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarToggleSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                 
-                <a class="d-flex align-items-center" href="{% url 'home' %}" style="max-width: 30%;">
-                    <img src="{% static 'images/logos/ashley_logo_transparent.png' %}" alt="Logo" style="height: 100px;">
-                </a>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <div class="address-container text-center mx-3">
-                    <h1 class="marina-name">Harborage At Ashley Marina</h1>
-                    <p>Charleston, South Carolina</p>
-                </div>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'home' %}">Home</a> 
+                        </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'cal' %}">Events</a> 
+                        </li>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarToggleSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-              
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'amenities' %}">Amenities</a> 
+                        </li>
 
-                  <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{% url 'home' %}">Home</a> 
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'dockwa' %}">Dockwa</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{% url 'cal' %}">Events</a> 
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'marriott' %}">Marriott Rates</a> 
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{% url 'amenities' %}">Amenities</a> 
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'FAQ' %}">FAQ</a> 
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'contact' %}">Contact Us</a> 
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'listings' %}">Listings</a> 
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'owners' %}">Owners</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'logout' %}">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link text-white"  href="{% url 'login' %}">Login</a>
+                        </li>
+                        {% endif %}
 
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{% url 'dockwa' %}">Dockwa</a>
-                    </li>
+                    </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="d-block d-md-none">
+                <nav class="navbar navbar-light" style="background-color: #194056;">
+                    
+                    <a class="d-flex align-items-center" href="{% url 'home' %}" style="max-width: 30%;">
+                        <img src="{% static 'images/logos/ashley_logo_transparent.png' %}" alt="Logo" style="height: 100px; justify-content: start;">
+                    </a>
 
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{% url 'marriott' %}">Marriott Rates</a> 
-                    </li>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarToggleSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{% url 'FAQ' %}">FAQ</a> 
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{% url 'contact' %}">Contact Us</a> 
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{% url 'listings' %}">Listings</a> 
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{% url 'owners' %}">Owners</a>
-                    </li>
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{% url 'logout' %}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link text-white"  href="{% url 'login' %}">Login</a>
-                    </li>
-                    {% endif %}
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'home' %}">Home</a> 
+                        </li>
 
-                  </ul>
-                </div>
-              </nav>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'cal' %}">Events</a> 
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'amenities' %}">Amenities</a> 
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'dockwa' %}">Dockwa</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'marriott' %}">Marriott Rates</a> 
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'FAQ' %}">FAQ</a> 
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'contact' %}">Contact Us</a> 
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'listings' %}">Listings</a> 
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'owners' %}">Owners</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'logout' %}">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link text-white"  href="{% url 'login' %}">Login</a>
+                        </li>
+                        {% endif %}
+
+                    </ul>
+                    </div>
+                </nav>
+            </div>
         </header> 
 
         
@@ -127,10 +189,16 @@
                 <div class="footer-column footer-column-middle">
 
                     <div class="footer-info">
-                        <img src="{% static 'images/logos/ashley_logo_transparent.png' %}" alt="Logo" style="height: 100px;">
+                        <img src="{% static 'images/logos/ashley_logo_light.png' %}" alt="Logo" style="height: 100px;">
                         <p>N 32°46.921, W 079°57.292</p>
-                        <p>Harborage At Ashley Marina</p>
-                        <p>Charleston, South Carolina</p>
+                        <p>33 Lockwood Drive, Charleson, SC 29401</p>
+                        <p>(843) 284-9942</p>
+                        <div class="footer-row justify-content-center gap-3">
+                            <a href="{% url 'terms' %}" class="text-white" style="text-decoration: none;">Terms of Use</a>
+                            
+                            <a href="{% url 'privacy' %}" class="text-white" style="text-decoration: none;">Privacy Policy</a>
+                        </div>
+                        <br>
                         <p>&copy; 2025 Harborage At Ashley Marina</p>
                     </div>
                 </div>

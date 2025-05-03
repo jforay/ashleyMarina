@@ -41,3 +41,9 @@ def contact(request):
         form = ContactMessageForm()
 
     return render(request, 'home/contact.html', {'form': form})
+
+def terms(request):
+    return render(request, 'home/terms_of_use.html')
+
+def privacy(request):
+    return render(request,'home/privacy_policy.html')
