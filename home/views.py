@@ -9,7 +9,7 @@ def home(request):
         {"name":"Event Calendar", "image_url":"/static/home/images/categories/calendar.jpg", "link":reverse('cal')},
         {"name":"Listings", "image_url":"/static/home/images/categories/listings.jpg", "link":reverse('listings')},
         {"name":"Marriott Rates", "image_url":"/static/home/images/categories/marriott.jpg", "link":reverse('marriott')},  
-        {"name":"FAQ", "image_url":"/static/home/images/categories/FAQ.jpeg", "link":reverse('FAQ')},
+        {"name":"FAQ", "image_url":"/static/home/images/categories/faq.jpeg", "link":reverse('FAQ')},
         {"name":"Contact", "image_url":"/static/home/images/categories/contact.jpeg", "link":reverse('contact')},
         {"name":"Owners", "image_url":"/static/home/images/categories/owners.jpg", "link":reverse('owners')},
     ]
