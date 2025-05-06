@@ -9,7 +9,7 @@ from .forms import ListingForm
 
 # Create your views here
 def listings(request):
-    listings = Listing.objects.filter(is_active=True).order_by('-created_at')
+    listings = Listing.objects.filter(is_active=True)
 
     return  render(request, 'listings/listings.html', {'listings': listings})
 

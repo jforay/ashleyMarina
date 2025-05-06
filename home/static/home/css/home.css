@@ -15,6 +15,7 @@
     position: relative;
     margin-bottom: 50px;
     overflow: hidden;
+    background-repeat: no-repeat;
 }
 
 .category-overlay {
