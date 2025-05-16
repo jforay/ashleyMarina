@@ -25,7 +25,7 @@
     </div>
 </div>
   
-<div class="home" style="text-align: center;">
+<div class="home text-center">
     {% for category in categories %}
         {% if category.name == "Dockwa" or category.name == "Contact" %}
         <section class="category-section" style="background-image: url('{{ category.image_url }}')"></section>
