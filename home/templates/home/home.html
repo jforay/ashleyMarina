@@ -38,7 +38,10 @@
         </section>
         {% endif %}
         <section class="white-logo-bar text-center">
-            <img src="{% static 'images/logos/Ashley_Logo_edited.png' %}" alt="Ashley Marina Logo" class="white-bar-logo">
+            <a href="{{ category.link }}">
+                <img src="{% static 'images/logos/Ashley_Logo_edited.png' %}" alt="Ashley Marina Logo" class="white-bar-logo">
+
+            </a>
             <br>
             <a href="{{ category.link }}" class="white-bar-link">Click Here</a>
         </section>
