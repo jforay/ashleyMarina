@@ -100,3 +100,13 @@
 .white-bar-link:hover {
     text-decoration: underline;
 }
+
+.category-section,
+.white-logo-bar {
+    margin: 0;
+    padding: 0;
+}
+
+.section-spacer {
+    height: 50px; /* Adjust for the desired spacing */
+}
