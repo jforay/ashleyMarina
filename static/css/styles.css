@@ -93,7 +93,7 @@ footer a img {
 
 .marina-subtitle {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.25rem;
+    font-size: 2.25rem;
     font-style: italic;
     color: #d0e0f0;
     text-align: center;
@@ -117,6 +117,7 @@ footer a img {
 .navbar-nav {
     width: 100%;
     justify-content: flex-end; /* This will align the nav items to the right */
+    text-align: center;
 }
  
 .navbar-toggler {
