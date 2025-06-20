@@ -81,7 +81,7 @@ footer a img {
 
 .marina-name {
     font-family: 'Cormorant Garamond', serif !important;
-    font-size: 3.5rem !important;
+    font-size: 2.25rem !important;
     font-weight: 600 !important;
     font-style: italic !important;
     color: #f8f9fa !important;  /* Off-white */
@@ -93,7 +93,7 @@ footer a img {
 
 .marina-subtitle {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.25rem;
+    font-size: 1.75rem;
     font-style: italic;
     color: #d0e0f0;
     text-align: center;
