@@ -91,6 +91,18 @@ footer a img {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); /* Subtle depth */
 }
 
+@media (min-width: 968px) {
+    .marina-name {
+        font-size: 3rem;
+    }
+
+    .marina-subtitle {
+        font-size: 2.25;
+    }
+
+
+}
+
 .marina-subtitle {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.75rem;
