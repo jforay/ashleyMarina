@@ -8,6 +8,7 @@ gunicorn==23.0.0
 MarkupSafe==3.0.2
 packaging==25.0
 pillow==11.2.1
+psycopg2-binary==2.9.10
 pycparser==2.22
 pyOpenSSL==25.0.0
 sqlparse==0.5.3
