@@ -6,6 +6,8 @@
 {% block content %}
 
 <div class="home text-center">
+    <img src="{% static 'home/images/categories/sunset.heic' %}" alt="sunset">
+
     {% for category in categories %}
         {% if category.name == "Dockwa" %}
         <!-- Full-width wrapper sets the background -->
@@ -41,6 +43,7 @@
         <section class="category-section" style="background-image: url('{{ category.image_url }}')">
             <a href="{{ category.link }}"> <h2 class="category-title">{{ category.name }}</h2></a>
         </section>
+        <br><hr>
         {% endif %}
         <section class="white-logo-bar text-center">
             <a href="{{ category.link }}">
