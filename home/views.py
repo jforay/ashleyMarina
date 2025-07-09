@@ -4,7 +4,7 @@ from .forms import ContactMessageForm
 
 def home(request):
     categories = [
-        {"name":"Marina Amenities", "image_url":"/static/home/images/amenities/sunset.jpg", "link":reverse('amenities')},
+        {"name":"Marina Amenities", "image_url":"/static/home/images/categories/amenities.jpg", "link":reverse('amenities')},
         {"name":"Dockwa", "image_url":"/static/home/images/categories/dockwa.jpeg", "link":reverse('dockwa')},
         {"name":"Event Calendar", "image_url":"/static/home/images/categories/calendar.jpg", "link":reverse('cal')},
         {"name":"Listings", "image_url":"/static/home/images/categories/listings.jpg", "link":reverse('listings')},

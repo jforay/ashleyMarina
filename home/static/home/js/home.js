@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const section = document.querySelector('.category-section');
+  const section = document.querySelector('#rotator');
+
+  if(!section) return;
+
   const images = [
-    "{{ category.image_url }}",
-    "{% static 'images/overlay.png' %}"
+   section.getAttribute('data-img-1'),
+   section.getAttribute('data-img-2'),
   ];
   let idx = 0;
 

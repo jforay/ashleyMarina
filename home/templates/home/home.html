@@ -4,7 +4,7 @@
 <script src="{% static 'yourapp/js/bg-rotator.js' %}" defer></script>
 
 {% block content %}
-  
+
 <div class="home text-center">
     {% for category in categories %}
         {% if category.name == "Dockwa" %}
@@ -31,29 +31,12 @@
             </div>
         </section>
         <section class="category-section" style="background-image: url('{{ category.image_url }}')"></section>
-    
-        {% elif category.name == "Marina Amenities" %}
-        <h1 style="font-weight: bolder;">Marina Amenities</h1>
-        {% load static %}
-        <section
-            class="category-section"
-            data-img-1="{{ category.image_url }}"
-            data-img-2="{% static 'images/overlay.png' %}"
-            style="
-                /* fallback & sizing so the first image shows immediately */
-                background-image: url('{{ category.image_url }}');
-                background-size: cover;
-                background-position: center;
-                min-height: 300px;
-            "
-        ></section>
 
-        <section class="category-section" style="background-image: url('{{ category.image_url }}')"></section>
-        
 
         {% else %}
+        
         <section class="category-section" style="background-image: url('{{ category.image_url }}')">
-            <h2 class="category-title">{{ category.name }}</h2>
+            <a href="{{ category.link }}"> <h2 class="category-title">{{ category.name }}</h2></a>
         </section>
         {% endif %}
         <section class="white-logo-bar text-center">
