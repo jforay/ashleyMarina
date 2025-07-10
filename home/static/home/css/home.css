@@ -1,13 +1,56 @@
+
+
 .home {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: white;
 }
+
+.dockwa-button {
+  position: absolute;
+  bottom: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: clamp(0.5rem, 1.5vw, 1rem)
+           clamp(1rem,   3vw, 2rem);
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  background: #194056;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.dockwa-lead {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  color: black;
+}
+
+.dockwa-heading {
+  margin: 0 0 0.5em;
+  color: #fff;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  line-height: 1.1;
+  color: black;
+}
+
+.dockwa-overlay {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  pointer-events: none;
+}
+
 .category-section {
     width: 100%;
     height: 600px;
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
@@ -17,18 +60,12 @@
     margin-bottom: 50px;
     overflow: hidden;
     background-repeat: no-repeat;
+    padding-bottom: 33.33%;
 }
 
-
-@media (max-width: 250px) {
-    .category-section {
-        height: 50px;
-    }
-}
-
-@media (max-width: 468px) {
-    .category-section {
-        height: 100px;
+@media (max-width: 500px){
+    .category-section{
+        height: 10px;
     }
 }
 
@@ -39,23 +76,19 @@
 }
 
 /* Medium screens (between 769px and 1200px) */
-@media (max-width: 1020px) {
+@media (max-width: 1520px) {
     .category-section {
         height: 400px;
     }
 }
 
-@media (min-width: 1800px) {
+@media (max-width: 1800px) {
     .category-section {
-        height: 600px;
+        height: 500px;
     }
 }
 
-@media (min-width: 2200px) {
-    .category-section {
-        height: 800px;
-    }
-}
+
 .category-overlay {
     display: flex;
     flex-direction: column;
@@ -102,6 +135,70 @@
     transform: translateX(-50%);
     font-size: 2.5rem;
     font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+
+    /* add some breathing room inside the box */
+    padding: 0.3em 0.6em;
+
+    /* optional semi-opaque background so the text pops */
+    background: #194056;
+
+    /* optional rounding of the corners */
+    border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.owners-title {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+
+    /* add some breathing room inside the box */
+    padding: 0.3em 0.6em;
+
+    /* optional semi-opaque background so the text pops */
+    background: #194056;
+
+    /* optional rounding of the corners */
+    border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.dockwa-title {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+
+    /* add some breathing room inside the box */
+    padding: 0.3em 0.6em;
+
+    /* optional semi-opaque background so the text pops */
+    background: #194056;
+
+    /* optional rounding of the corners */
+    border-radius: 4px;
+}
+
+
+.category-subtitle {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
     color: white;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 

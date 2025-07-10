@@ -1,3 +1,5 @@
+
+
 {% extends 'base.html' %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
@@ -34,17 +36,46 @@
 <div class="home text-center">
 
     {% for category in categories %}
-                
+        {% if category.name == 'Dockwa' %}
+        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
+            <a href="{{ category.link }}"> <h2 class="dockwa-button">Enter Here</h2></a>
+            <div class="dockwa-overlay">
+                <h3 class="dockwa-heading">Reserve Your Slip Instantly</h3>
+                <p class="dockwa-lead">
+                    Book via Dockwa—no phone calls, no waiting.
+                </p>
+            </div>
+        </section>
+        {% elif category.name == 'Owners Forum' %}
+        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
+            <a href="{{ category.link }}"> <h2 class="owners-title">{{ category.name }}</h2></a>
+
+            <a href="{{ category.link }}"> <h2 class="dockwa-button">Enter Here</h2></a>
+        </section>
+
+        {% elif category.name == 'Marina Amenities' %}
+        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
+            <a href="{{ category.link }}"> <h2 class="dockwa-button">Enter Here</h2></a>
+            <div class="dockwa-overlay">
+                <h3 class="dockwa-heading">Come Check Out Our Amenities!</h3>
+                <p class="dockwa-lead">
+                    Book via Dockwa—no phone calls, no waiting.
+                </p>
+            </div>
+        </section>
+        {% else %}
         <section class="category-section" style="background-image: url('{{ category.image_url }}')">
             <a href="{{ category.link }}"> <h2 class="category-title">{{ category.name }}</h2></a>
+
+            <a href="{{ category.link }}"> <h2 class="category-subtitle">Enter Here</h2></a>
         </section>
-        
+        {% endif %}
         <section class="white-logo-bar text-center">
             <a href="{{ category.link }}">
                 <img src="{% static 'images/logos/Ashley_Logo_edited.png' %}" alt="Ashley Marina Logo" class="white-bar-logo">
             </a>
             <br>
-            <a href="{{ category.link }}" class="white-bar-link">Click Here</a>
+            <a href="{{ category.link }}" class="white-bar-link">{{ category.name }}</a>
         </section>
 
         <section style="background-color:rgb(152, 199, 225); width: 100%;height: 100px;"></section>
@@ -62,4 +93,6 @@
 </div>
 
 {% endblock %}
+
+
 
