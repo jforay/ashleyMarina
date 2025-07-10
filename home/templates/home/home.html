@@ -5,46 +5,40 @@
 
 {% block content %}
 
+<div class="container text-center">
+    <br>
+    <h2 class="home-text" style="color: black !important;">We are now accepting annual leases!</h2>
+    <h4 class="home-subtext" style="color: black !important;">Please email Dockmaster@myashleymarina.com for more information!</h4>
+</div>
+<div class="container-fluid my-5">
+    <div class="row justify-content-center align-items-center text-center">
+        <div class="col-md-3 mb-4 mb-md-0">
+            <h3 class="home-text">Transient Reservations</h3>
+            <p class="home-subtext">Click below to reserve!</p>
+            <a href="{% url 'dockwa' %}" class="btn btn-marina">Transient Reservations</a>
+        </div>
+
+        <div class="col-md-6 ">
+            <img src="{% static 'home/images/categories/sunset.heic' %}"
+                alt="Marina sunset"
+                class="img-fluid marina-photo rounded shadow-sm">
+        </div>
+
+        <div class="col-md-3">
+            <h3 class="home-text">Hotel Room Wet Slip Combo</h3>
+            <p class="home-subtext">Click below to reserve!</p>
+            <a href="{% url 'marriott' %}" class="btn btn-marina">Wet Slip &amp; Hotel Room</a>
+        </div>
+    </div>
+</div>
 <div class="home text-center">
-    <img src="{% static 'home/images/categories/sunset.heic' %}" alt="sunset">
 
     {% for category in categories %}
-        {% if category.name == "Dockwa" %}
-        <!-- Full-width wrapper sets the background -->
-        <section style="background-color:rgb(152, 199, 225); width: 100%;">
-        <!-- Bootstrap container keeps text/content centered -->
-            <div class="container py-4 text-center">
-                <h1 class="home-text">We Are Now Accepting Annual Leases!</h1>
-                <br>
-                <h3 class="home-subtext">Please email Dockmaster@myashleymarina.com for more information</h3>
-                <br><br>
-                <div class="row">
-                    <div class="col-md-6 mb-4 text-center">
-                        <h3 class="home-text">Transient Reservations</h3>
-                        <div class="home-subtext">Short-term dockage available. Reserve your spot Today!</div>
-                        <a href="{% url 'dockwa' %}" class="link-btn">Dockwa</a>
-                    </div>
-                    <div class="col-md-6 mb-4 text-center">
-                        <h3 class="home-text">Boat Slip Hotel Room Combo</h3>
-                        <div class="home-subtext">For more information on our partnership with the Charleston Marriott, click here!</div>
-                        <a href="{% url 'marriott' %}" class="link-btn">Marriott Rates</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+                
         <section class="category-section" style="background-image: url('{{ category.image_url }}')">
             <a href="{{ category.link }}"> <h2 class="category-title">{{ category.name }}</h2></a>
-
         </section>
-
-
-        {% else %}
         
-        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
-            <a href="{{ category.link }}"> <h2 class="category-title">{{ category.name }}</h2></a>
-        </section>
-        <br><hr>
-        {% endif %}
         <section class="white-logo-bar text-center">
             <a href="{{ category.link }}">
                 <img src="{% static 'images/logos/Ashley_Logo_edited.png' %}" alt="Ashley Marina Logo" class="white-bar-logo">
@@ -53,120 +47,11 @@
             <a href="{{ category.link }}" class="white-bar-link">Click Here</a>
         </section>
 
-        <div class="section-spacer"></div>
+        <section style="background-color:rgb(152, 199, 225); width: 100%;height: 100px;"></section>
 
     {% endfor %} 
 </div>
-<!-- <div class="home">    
-    {% for category in categories %}
-        {% if category.name ==  'Marina Amenities' %}
-        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
-            <h2 class="category-title">{{ category.name }}</h2>
-            <a href="{{ category.link }}">
 
-                <img src="{% static 'images/logos/ashley_logo_light.png' %}" type="image/png" style="width: 300px;">
-                <h5 class="category-link" style="left: 50%; bottom: 25%;">Click Here</h5>
-
-
-            </a>
-        </section>
-        {% elif  category.name == 'Dockwa' %}
-        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
-            <h2 class="category-title">{{ category.name }}</h2>
-            <a href="{{ category.link }}">
-    
-                <img src="{% static 'images/logos/ashley_logo_light.png' %}" type="image/png" style="width: 300px;">
-                <h5 class="category-link" style="left: 50%; bottom: 25%;">Click Here</h5>
-    
-    
-            </a>
-        </section>
-
-        {% elif  category.name == 'Marriott Rates' %}
-        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
-            <h2 class="category-title">{{ category.name }}</h2>
-            <a href="{{ category.link }}">
-    
-                <img src="{% static 'images/logos/ashley_logo_light.png' %}" type="image/png" style="width: 300px;">
-                <h5 class="category-link" style="left: 50%; bottom: 25%;">Click Here</h5>
-    
-    
-            </a>
-        </section>
-
-        {% elif  category.name == 'FAQ' %}
-        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
-            <h2 class="category-title">{{ category.name }}</h2>
-            <a href="{{ category.link }}">
-    
-                <img src="{% static 'images/logos/ashley_logo_light.png' %}" type="image/png" style="width: 300px;">
-                <h5 class="category-link" style="left: 50%; bottom: 25%;">Click Here</h5>
-    
-    
-            </a>
-        </section>
-
-        {% elif  category.name == 'Event Calendar' %}
-        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
-            <h2 class="category-title">{{ category.name }}</h2>
-            <a href="{{ category.link }}">
-    
-                <img src="{% static 'images/logos/ashley_logo_light.png' %}" type="image/png" style="width: 300px;">
-                <h5 class="category-link" style="left: 50%; bottom: 25%;">Click Here</h5>
-    
-    
-            </a>
-        </section>
-
-        {% elif  category.name == 'Contact'%}
-        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
-            <h2 class="category-title">{{ category.name }}</h2>
-            <a href="{{ category.link }}">
-    
-                <img src="{% static 'images/logos/ashley_logo_light.png' %}" type="image/png" style="width: 300px;">
-                <h5 class="category-link" style="left: 50%; bottom: 25%;">Click Here</h5>
-    
-    
-            </a>
-        </section>
-
-        {% elif  category.name == 'Listings' %}
-        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
-            <h2 class="category-title">{{ category.name }}</h2>
-            <a href="{{ category.link }}">
-    
-                <img src="{% static 'images/logos/ashley_logo_light.png' %}" type="image/png" style="width: 300px;">
-                <h5 class="category-link" style="left: 50%; bottom: 25%;">Click Here</h5>
-    
-    
-            </a>
-        </section>
-
-        {% elif  category.name == 'owners' %}
-        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
-            <h2 class="category-title">{{ category.name }}</h2>
-            <a href="{{ category.link }}">
-    
-                <img src="{% static 'images/logos/ashley_logo_light.png' %}" type="image/png" style="width: 300px;">
-                <h5 class="category-link" style="left: 50%; bottom: 25%;">Click Here</h5>
-    
-    
-            </a>
-        </section>
-        {% else %}
-        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
-            <h2 class="category-title">{{ category.name }}</h2>
-            <a href="{{ category.link }}">
-    
-                <img src="{% static 'images/logos/ashley_logo_light.png' %}" type="image/png" style="width: 300px;">
-                <h5 class="category-link" style="left: 50%; bottom: 25%;">Click Here</h5>
-    
-    
-            </a>
-        </section>
-        {% endif %}
-
-    {% endfor %} -->
 </div>
 
 <div class="container my-0 py-4 text-center">

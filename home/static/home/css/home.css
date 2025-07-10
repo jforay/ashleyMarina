@@ -176,3 +176,19 @@
     margin-top: 0.5rem;
     letter-spacing: 1px;
 }
+
+.btn-marina {
+  background-color: #194056;
+  border: 1px solid #194056;
+  color: #fff;
+}
+.btn-marina:hover {
+  background-color: #27627a;
+  border-color:    #27627a;
+}
+
+.marina-photo {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
