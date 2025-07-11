@@ -42,27 +42,62 @@
                 </p>
             </div>
         </section>
-        {% elif category.name == 'Owners Forum' %}
-        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
-            <a href="{{ category.link }}"> <h2 class="owners-title">{{ category.name }}</h2></a>
 
-            <a href="{{ category.link }}"> <h2 class="dockwa-button">Enter Here</h2></a>
+
+        {% elif category.name == 'Event Calendar' %}
+        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
+            <a href="{{ category.link }}"> <h2 class="calendar-button">Enter Here</h2></a>
+            <div class="calendar-overlay">
+                <h3 class="dockwa-heading calendar-name" style="color: rgb(152, 199, 225); top: 25% !important;">Calendar Of Current Events</h3>
+            </div>
+        </section>
+
+        {% elif category.name == 'Current Listings' %}
+
+        <section class="category-section" style="background-image: url('{{ category.image_url }}');">
+            <a href="{{ category.link }}"> <h2 class="listings-button">Enter Here</h2></a>
+            <div class="listings-overlay">
+                <h3 class="dockwa-heading calendar-name" style="font-size: 4rem;">Current Listings - Slips For Sale</h3>
+
+            </div>
+        </section>
+        {% elif category.name == 'Owners Forum' %}
+        <section class="category-section" style="background-image: url('{{ category.image_url }}');">
+            <a href="{{ category.link }}"> <h2 class="owners-button">Enter Here</h2></a>
+            <h3 class="owners-heading-left category-name">Owners</h3>
+            <h3 class="owners-heading-right category-name">Forum</h3>
+
+        </section>
+
+        {% elif category.name == 'Marriott Rates' %}
+        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
+                
+            <div class="marriott-overlay">
+                <h3 class="marriott-heading category-name" style="color: white; font-size: 4rem !important;">Charleston Marriott Waterfront</h3>
+            </div>
+   
+            <a href="{{ category.link }}"> <h2 class="dockwa-button">For Rates Click Here</h2></a>
         </section>
 
         {% elif category.name == 'Marina Amenities' %}
         <section class="category-section" style="background-image: url('{{ category.image_url }}')">
-            <a href="{{ category.link }}"> <h2 class="dockwa-button">Enter Here</h2></a>
-            <div class="dockwa-overlay">
-                <h3 class="dockwa-heading">Come Check Out Our Amenities!</h3>
-                <p class="dockwa-lead">
-                    Book via Dockwa—no phone calls, no waiting.
-                </p>
+            <a href="{{ category.link }}"> <h2 class="amenities-button">Enter Here</h2></a>
+            <div class="amenities-overlay">
+                <h3 class="dockwa-heading category-name" style="text-shadow: 2px 2px 6px rgba(0, 0, 0, 200); font-size: 3.8rem !important;">Come Check Out Our Amenities!</h3>
             </div>
+        </section>
+
+        {% elif category.name == 'FAQs' %}
+        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
+            <a href="{{ category.link }}"> <h2 class="faq-subtitle">Enter Here</h2></a>
+        </section>
+
+        {% elif category.name == 'Contact Us' %}
+        <section class="category-section" style="background-image: url('{{ category.image_url }}')">
+            <a href="{{ category.link }}"> <h2 class="contact-subtitle">Enter Here</h2></a>
         </section>
         {% else %}
         <section class="category-section" style="background-image: url('{{ category.image_url }}')">
-            <a href="{{ category.link }}"> <h2 class="category-title">{{ category.name }}</h2></a>
-
             <a href="{{ category.link }}"> <h2 class="category-subtitle">Enter Here</h2></a>
         </section>
         {% endif %}
@@ -71,7 +106,6 @@
                 <img src="{% static 'images/logos/Ashley_Logo_edited.png' %}" alt="Ashley Marina Logo" class="white-bar-logo">
             </a>
             <br>
-            <a href="{{ category.link }}" class="white-bar-link">{{ category.name }}</a>
         </section>
 
         <section style="background-color:rgb(152, 199, 225); width: 100%;height: 100px;"></section>
@@ -84,7 +118,7 @@
 <div class="container my-0 py-4 text-center">
     <h1>Creating a Community on The Water</h1>
     <p style="line-height: 1.8; margin-bottom: 1.5rem;">The Harborage at Ashley Marina Condominium Association was formed as dockominium in 2006 and is the Marina slip-owners association that governs Ashley Marina's commercial and residential use.  The marina is governed by the Master Deed and By-Laws set forth in the Articles of Incorporation for the Harborage at Ashley Marina Condominium Association and the Rules and Regulations that are amended from time to time by marina management and Board of Directors.</p>
-    <p style="line-height: 1.8; margin-bottom: 1.5rem;">Current Board of Directors include D. Cooke Jr, R. Baker, D. Sutton, K. Smith, J. Mazzoli</p>
+    <p style="line-height: 1.8; margin-bottom: 1.5rem;">Current Board of Directors include Dawes Cooke Jr,  Randy Baker,  David Sutton,  Kevin Smith,  Jon Mazzoli</p>
     <p style="line-height: 1.8; margin-bottom: 1.5rem;">The Harborage at Ashley Marina is one of the premier marina facilities with slips available for individual ownership in the Charleston Area.  Membership in the association is available through slip ownership and does require ongoing financial contribution via quarterly dues as determined by the quarterly assessment.  While we invite any boat enthusiast to dock with us, residential privileges are limited.  As a reminder, all vessels entering the marina must keep a minimum of $500k liability on their vessel and include the Marina added as an additional insured, and all owners and tenants must abide by the Rules & Regulations.  For slip purchase availability, check out the Listing page.</p>
 </div>
 

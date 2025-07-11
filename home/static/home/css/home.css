@@ -21,6 +21,48 @@
   text-decoration: none;
 }
 
+.listings-button {
+  position: absolute;
+  bottom: 1px;
+  right: 37%;
+  transform: translateX(-50%);
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  background: #194056;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 1.5em 1.7em;
+  margin-bottom: -10px;
+}
+
+.owners-button {
+  position: absolute;
+  bottom: 21.5%;
+  right: 47%;
+  transform: translateX(-50%);
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  background: #194056;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 1em 1em;
+}
+
+.amenities-button {
+  position: absolute;
+  bottom: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: clamp(0.5rem, 1.5vw, 1rem)
+           clamp(1rem,   3vw, 2rem);
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  background: #194056;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
 .dockwa-lead {
   margin: 0;
   color: #fff;
@@ -36,9 +78,100 @@
   color: black;
 }
 
+.owners-heading-left {
+
+    position: absolute;
+    top: 4%;
+    left: 30%;
+    transform: translateX(-50%);
+    margin: 0 0 0.5em;
+    color: #fff;
+    font-size: 3rem;
+    line-height: 1.1;
+    color: black;
+}
+
+.owners-heading-right {
+
+    position: absolute;
+    top: 4%;
+    right: 17%;
+    transform: translateX(-50%);
+    margin: 0 0 0.5em;
+    color: #fff;
+    font-size: 3rem;
+    line-height: 1.1;
+    color: black;
+}
+
+.calendar-heading {
+  margin: 0 0 0.5em;
+  color: #fff;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  line-height: 1.1;
+  color: black;
+  top: 50%;
+}
 .dockwa-overlay {
   position: absolute;
   top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.amenities-overlay {
+  position: absolute;
+  top: 23%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  pointer-events: none;
+}
+
+
+.owners-overlay {
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    pointer-events: none;
+    flex-direction: row;
+}
+
+.listings-overlay {
+  position: absolute;
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.marriott-overlay {
+  position: absolute;
+  top: 4%;
+  left: 60%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.calendar-overlay {
+  position: absolute;
+  top: 15%;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
@@ -172,6 +305,21 @@
     overflow: hidden;
 }
 
+.calendar-button {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: clamp(0.5rem, 1.5vw, 1rem)
+           clamp(1rem,   3vw, 2rem);
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  background: #194056;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
 .dockwa-title {
     position: absolute;
     top: 35%;
@@ -212,6 +360,42 @@
     border-radius: 4px;
 }
 
+.faq-subtitle {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+
+    /* add some breathing room inside the box */
+    padding: 0.3em 0.6em;
+
+    /* optional semi-opaque background so the text pops */
+    background: #194056;
+
+    /* optional rounding of the corners */
+    border-radius: 4px;
+}
+.contact-subtitle {
+    position: absolute;
+    bottom: 5%;
+    left: 63%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+
+    /* add some breathing room inside the box */
+    padding: 0.3em 0.6em;
+
+    /* optional semi-opaque background so the text pops */
+    background: #194056;
+
+    /* optional rounding of the corners */
+    border-radius: 4px;
+}
 .category-section a {
     text-decoration: none !important;
     color: inherit;  /* Makes sure link doesn't turn blue */
@@ -288,4 +472,24 @@
   width: 100%;
   height: 500px;
   object-fit: cover;
+}
+
+.category-name {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 6rem !important;
+    font-weight: 600 !important;
+    font-style: italic !important;
+    color: #f8f9fa !important;  /* Off-white */
+    letter-spacing: 2px !important;
+    text-transform: none !important;
+    margin: 0 !important;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 6); /* Subtle depth */
+}
+
+.calendar-name {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 4.5rem;
+    font-style: italic !important;
+
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 300); /* Subtle depth */
 }

@@ -4,14 +4,14 @@ from .forms import ContactMessageForm
 
 def home(request):
     categories = [
-        {"name":"Marina Amenities", "image_url":"/static/home/images/categories/amenities.png", "link":reverse('amenities')},
+        {"name":"Marina Amenities", "image_url":"/static/home/images/categories/amenities2.jpeg", "link":reverse('amenities')},
         {"name":"Dockwa", "image_url":"/static/home/images/categories/dockwa2.jpeg", "link":reverse('dockwa')},
         {"name":"Event Calendar", "image_url":"/static/home/images/categories/calendar.jpg", "link":reverse('cal')},
-        {"name":"Current Listings", "image_url":"/static/home/images/categories/listings.jpg", "link":reverse('listings')},
+        {"name":"Current Listings", "image_url":"/static/home/images/categories/listings2.jpeg", "link":reverse('listings')},
         {"name":"Marriott Rates", "image_url":"/static/home/images/categories/marriott.jpg", "link":reverse('marriott')},  
         {"name":"FAQs", "image_url":"/static/home/images/categories/faqs.jpeg", "link":reverse('FAQ')},
-        {"name":"Contact Us", "image_url":"/static/home/images/categories/contact-us.jpeg", "link":reverse('contact')},
-        {"name":"Owners Forum", "image_url":"/static/home/images/categories/owners.jpg", "link":reverse('owners')},
+        {"name":"Contact Us", "image_url":"/static/home/images/categories/contact-us2.jpeg", "link":reverse('contact')},
+        {"name":"Owners Forum", "image_url":"/static/home/images/categories/owners4.jpeg", "link":reverse('owners')},
     ]
     return render(request, 'home/home.html', {'categories':categories})
 
