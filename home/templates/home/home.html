@@ -1,10 +1,6 @@
-
-
 {% extends 'base.html' %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
-<script src="{% static 'yourapp/js/bg-rotator.js' %}" defer></script>
-
 {% block content %}
 
 <div class="container text-center">
@@ -20,7 +16,13 @@
             <a href="{% url 'dockwa' %}" class="btn btn-marina">Transient Reservations</a>
         </div>
 
-        <img src="{% static 'home/images/categories/sunset.jpeg' %}" alt="Marina sunset" class="img-fluid marina-photo rounded shadow-sm" style="width: 33%;">
+        <!-- wrap image in a col -->
+        <div class="col-md-6 mb-4 mb-md-0">
+            <img src="{% static 'home/images/categories/sunset.jpeg' %}"
+                alt="Marina sunset"
+                class="img-fluid marina-photo rounded shadow-sm mx-auto d-block"
+                style="max-width:100%; height:auto;">
+        </div>
 
         <div class="col-md-3">
             <h3 class="home-text">Hotel Room Wet Slip Combo</h3>
@@ -29,7 +31,94 @@
         </div>
     </div>
 </div>
-<div class="home text-center">
+
+<div class="text-center d-block d-md-none">
+    <h1 class="home-text">Click below to view our menu!</h1>
+    <a href="#top">
+        <button class="btn btn-marina" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarToggleSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Click Here to View our Menu!</button>
+    </a>
+
+</div>
+
+<div class="text-center d-none d-md-block d-lg-none">
+
+    <div class="amenities">
+        <h2 class="marina-name">Menu Categories</h2>  
+
+        <div class="amenities-box"> 
+
+            <a href="{% url 'cal' %}">
+                <div class="grid-item image-item">
+                    <div class="caption-top">Event Calendar</div>
+
+                    <img src="{% static 'home/images/categories/calendar.jpg' %}" alt="calendar">
+                </div>
+            </a>
+
+
+            <a href="{% url 'amenities' %}">
+                <div class="grid-item image-item">
+                    <div class="caption-top">Marina Amenities</div>
+
+                    <img src="{% static 'home/images/categories/amenities2.jpeg' %}" alt="amenities">
+                </div>
+            </a>
+
+            <a href="{% url 'dockwa' %}">
+                <div class="grid-item image-item">
+                    <div class="caption-top">Dockwa</div>
+
+                    <img src="{% static 'home/images/categories/dockwa2.jpeg' %}" alt="dockwa">
+                </div>
+            </a>
+
+
+            <a href="{% url 'marriott' %}">
+                <div class="grid-item image-item">
+                    <div class="caption-top">Marriott Rates</div>
+
+                    <img src="{% static 'home/images/categories/marriott.jpg' %}" alt="marriot">
+                </div>
+            </a>
+
+            <a href="{% url 'FAQ' %}">
+                <div class="grid-item image-item">
+                    <div class="caption-top">Frequently Asked Questions</div>
+
+                    <img src="{% static 'home/images/categories/faqs.jpeg' %}" alt="faqs">
+                </div>
+            </a>
+        
+            <a href="{% url 'contact' %}">
+                <div class="grid-item image-item">
+                    <div class="caption-top">Contact Us</div>
+
+                    <img src="{% static 'home/images/categories/contact-us2.jpeg' %}" alt="contact">
+                </div>
+            </a>
+
+
+            <a href="{% url 'listings' %}">
+                <div class="grid-item image-item">
+                    <div class="caption-top">Current Listings</div>
+
+                    <img src="{% static 'home/images/categories/listings.jpeg' %}" alt="listings">
+                </div>
+            </a>
+
+            <a href="{% url 'owners' %}">
+                <div class="grid-item image-item">
+                    <div class="caption-top">Owners Forum</div>
+
+                    <img src="{% static 'home/images/categories/owners3.jpeg' %}" alt="owners">
+                </div>
+            </a>
+        
+        </div>
+    </div>
+</div>
+
+<div class="home text-center d-none d-lg-block">
 
     {% for category in categories %}
         {% if category.name == 'Dockwa' %}
@@ -113,13 +202,12 @@
     {% endfor %} 
 </div>
 
-</div>
-
-<div class="container my-0 py-4 text-center">
-    <h1>Creating a Community on The Water</h1>
-    <p style="line-height: 1.8; margin-bottom: 1.5rem;">The Harborage at Ashley Marina Condominium Association was formed as dockominium in 2006 and is the Marina slip-owners association that governs Ashley Marina's commercial and residential use.  The marina is governed by the Master Deed and By-Laws set forth in the Articles of Incorporation for the Harborage at Ashley Marina Condominium Association and the Rules and Regulations that are amended from time to time by marina management and Board of Directors.</p>
-    <p style="line-height: 1.8; margin-bottom: 1.5rem;">Current Board of Directors include Dawes Cooke Jr,  Randy Baker,  David Sutton,  Kevin Smith,  Jon Mazzoli</p>
-    <p style="line-height: 1.8; margin-bottom: 1.5rem;">The Harborage at Ashley Marina is one of the premier marina facilities with slips available for individual ownership in the Charleston Area.  Membership in the association is available through slip ownership and does require ongoing financial contribution via quarterly dues as determined by the quarterly assessment.  While we invite any boat enthusiast to dock with us, residential privileges are limited.  As a reminder, all vessels entering the marina must keep a minimum of $500k liability on their vessel and include the Marina added as an additional insured, and all owners and tenants must abide by the Rules & Regulations.  For slip purchase availability, check out the Listing page.</p>
+<div class="container-fluid my-0 py-4 text-center">
+    <h1 class="home-text" style="color:black !important;">Creating a Community on The Water</h1>
+    <br>
+    <p class='home-subtext' style="line-height: 1.8; margin-bottom: 1.5rem; color: black !important;">The Harborage at Ashley Marina Condominium Association was formed as dockominium in 2006 and is the Marina slip-owners association that governs Ashley Marina's commercial and residential use.  The marina is governed by the Master Deed and By-Laws set forth in the Articles of Incorporation for the Harborage at Ashley Marina Condominium Association and the Rules and Regulations that are amended from time to time by marina management and Board of Directors.</p>
+    <p class="home-subtext" style="line-height: 1.8; margin-bottom: 1.5rem; color: black !important;">Current Board of Directors include Dawes Cooke Jr,  Randy Baker,  David Sutton,  Kevin Smith,  Jon Mazzoli</p>
+    <p class="home-subtext" style="line-height: 1.8; margin-bottom: 1.5rem; color: black !important;">The Harborage at Ashley Marina is one of the premier marina facilities with slips available for individual ownership in the Charleston Area.  Membership in the association is available through slip ownership and does require ongoing financial contribution via quarterly dues as determined by the quarterly assessment.  While we invite any boat enthusiast to dock with us, residential privileges are limited.  As a reminder, all vessels entering the marina must keep a minimum of $500k liability on their vessel and include the Marina added as an additional insured, and all owners and tenants must abide by the Rules & Regulations.  For slip purchase availability, check out the Listing page.</p>
 </div>
 
 {% endblock %}

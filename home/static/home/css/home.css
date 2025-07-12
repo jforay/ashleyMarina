@@ -181,6 +181,7 @@
 }
 
 .category-section {
+    min-width: 970px;
     width: 100%;
     height: 600px;
     background-size: cover;
@@ -191,9 +192,9 @@
     text-align: center;
     position: relative;
     margin-bottom: 50px;
-    overflow: hidden;
     background-repeat: no-repeat;
     padding-bottom: 33.33%;
+    flex-shrink: 0;
 }
 
 @media (max-width: 500px){
@@ -445,7 +446,8 @@
     font-style: italic !important;
     letter-spacing: 2px !important;
     text-transform: none !important;
-    margin: 0 !important;
+    margin: 5px !important;
+    padding: 5px;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); /* Subtle depth */
 }
 
