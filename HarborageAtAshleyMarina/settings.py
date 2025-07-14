@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-import os
+import os, sys
 from pathlib import Path
 import dj_database_url
 
@@ -149,3 +149,28 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 if os.getenv('DATABASE_URL'):
     DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
+if not DEBUG:
+    LOGGING = {
+        "version": 1,
+        "disable_existing_loggers": False,
+        "handlers": {
+            "console": {
+                "class": "logging.StreamHandler",
+                "stream": sys.stdout,
+            },
+        },
+        "loggers": {
+            # Log uncaught exceptions (HTTP 500) from Django views
+            "django.request": {
+                "handlers": ["console"],
+                "level": "ERROR",
+                "propagate": False,
+            },
+            # (Optional) Catch absolutely everything
+            "": {
+                "handlers": ["console"],
+                "level": "ERROR",
+            },
+        },
+    }
