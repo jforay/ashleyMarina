@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid text-center py-5">
+    <h1 class="display-4">Whoops—something went wrong.</h1>
+    <p class="lead mb-4">We're on it! Please try again in a few minutes.</p>
+    <a href="{% url 'home' %}" class="btn btn-marina">Back to Home</a>
+</div>
+{% endblock %}
