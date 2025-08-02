@@ -174,3 +174,12 @@ if not DEBUG:
             },
         },
     }
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+DEFAULT_FROM_EMAIL = 'no-reply@harborageatashleymarina.com'
