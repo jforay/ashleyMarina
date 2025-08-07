@@ -3,17 +3,37 @@ from django.shortcuts import render, redirect
 from .forms import ContactMessageForm
 
 def home(request):
-    categories = [
-        {"name":"Marina Amenities", "image_url":"/static/home/images/categories/amenities2.jpeg", "link":reverse('amenities')},
-        {"name":"Dockwa", "image_url":"/static/home/images/categories/dockwa2.jpeg", "link":reverse('dockwa')},
-        {"name":"Event Calendar", "image_url":"/static/home/images/categories/calendar.jpg", "link":reverse('cal')},
-        {"name":"Current Listings", "image_url":"/static/home/images/categories/listings2.jpeg", "link":reverse('listings')},
-        {"name":"Marriott Rates", "image_url":"/static/home/images/categories/marriott.jpg", "link":reverse('marriott')},  
-        {"name":"FAQs", "image_url":"/static/home/images/categories/faqs.jpeg", "link":reverse('FAQ')},
-        {"name":"Contact Us", "image_url":"/static/home/images/categories/contact-us2.jpeg", "link":reverse('contact')},
-        {"name":"Owners Forum", "image_url":"/static/home/images/categories/owners4.jpeg", "link":reverse('owners')},
+    categories_big = [
+        {"name":"Marina Amenities", "image_url":"/static/home/images/categories/amenities-big.jpeg", "link":reverse('amenities')},
+        {"name":"Dockwa", "image_url":"/static/home/images/categories/dockwa-big.jpeg", "link":reverse('dockwa')},
+        {"name":"Event Calendar", "image_url":"/static/home/images/categories/calendar-big.jpg", "link":reverse('cal')},
+        {"name":"Current Listings", "image_url":"/static/home/images/categories/listings-big.jpeg", "link":reverse('listings')},
+        {"name":"Marriott Rates", "image_url":"/static/home/images/categories/marriott-big.jpg", "link":reverse('marriott')},  
+        {"name":"FAQs", "image_url":"/static/home/images/categories/faqs-big.jpeg", "link":reverse('FAQ')},
+        {"name":"Contact Us", "image_url":"/static/home/images/categories/contact-us-big.jpeg", "link":reverse('contact')},
+        {"name":"Owners Forum", "image_url":"/static/home/images/categories/owners-big.jpeg", "link":reverse('owners')},
     ]
-    return render(request, 'home/home.html', {'categories':categories})
+    categories_medium = [
+        {"name":"Marina Amenities", "image_url":"/static/home/images/categories/amenities-big.jpeg", "link":reverse('amenities')},
+        {"name":"Dockwa", "image_url":"/static/home/images/categories/dockwa-big.jpeg", "link":reverse('dockwa')},
+        {"name":"Event Calendar", "image_url":"/static/home/images/categories/calendar-big.jpg", "link":reverse('cal')},
+        {"name":"Current Listings", "image_url":"/static/home/images/categories/listings-big.jpeg", "link":reverse('listings')},
+        {"name":"Marriott Rates", "image_url":"/static/home/images/categories/marriott-big.jpg", "link":reverse('marriott')},  
+        {"name":"FAQs", "image_url":"/static/home/images/categories/faqs-big.jpeg", "link":reverse('FAQ')},
+        {"name":"Contact Us", "image_url":"/static/home/images/categories/contact-us-big.jpeg", "link":reverse('contact')},
+        {"name":"Owners Forum", "image_url":"/static/home/images/categories/owners-big.jpeg", "link":reverse('owners')},
+    ]
+    categories_small = [
+        {"name":"Marina Amenities", "image_url":"/static/home/images/categories/amenities-big.jpeg", "link":reverse('amenities')},
+        {"name":"Dockwa", "image_url":"/static/home/images/categories/dockwa-small.jpeg", "link":reverse('dockwa')},
+        {"name":"Event Calendar", "image_url":"/static/home/images/categories/calendar-big.jpg", "link":reverse('cal')},
+        {"name":"Current Listings", "image_url":"/static/home/images/categories/listings-small.jpeg", "link":reverse('listings')},
+        {"name":"Marriott Rates", "image_url":"/static/home/images/categories/marriott-big.jpg", "link":reverse('marriott')},  
+        {"name":"FAQs", "image_url":"/static/home/images/categories/faqs-small.jpeg", "link":reverse('FAQ')},
+        {"name":"Contact Us", "image_url":"/static/home/images/categories/contact-us-small.jpeg", "link":reverse('contact')},
+        {"name":"Owners Forum", "image_url":"/static/home/images/categories/owners-small.jpeg", "link":reverse('owners')},
+    ]
+    return render(request, 'home/home.html', {'categories_big':categories_big,'categories_medium':categories_medium,'categories_small':categories_small})
 
 def amenities(request):
     return render(request, 'home/amenities.html')

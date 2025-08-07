@@ -8,6 +8,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: rgb(152, 199, 225);
+    overflow-x: hidden;
 }
 footer {
     background-color: #194056;
