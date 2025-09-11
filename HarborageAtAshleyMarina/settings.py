@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2nkex-50f4d=o3e*!apv6-n81pi+cts2(mxno%mw-1jvknlsd-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get("DEBUG", "0") == in ("1", "true", "True")
 
 ALLOWED_HOSTS = ['localhost','127.0.0.1','harborageatashleymarina.com','www.harborageatashleymarina.com']
 
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'owners',
     'listings',
     'django_extensions',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -174,6 +175,32 @@ if not DEBUG:
             },
         },
     }
+    STORAGES = {
+        "default": {
+            "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
+        },
+        "staticfiles": {
+            "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        },
+    }
+    
+    DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+    AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]
+    AWS_S3_REGION_NAME = os.environ.get("AWS_S3_REGION_NAME", "us-east-1")
+    AWS_S3_SIGNATURE_VERSION = "s3v4"
+    AWS_S3_ADDRESSING_STYLE = "virtual"
+    AWS_S3_FILE_OVERWRITE = False
+    AWS_DEFAULT_ACL = None
+    AWS_QUERYSTRING_AUTH = False      # set True for private/signed links
+    # 🔐 Private files → Django returns signed (time-limited) URLs
+    AWS_QUERYSTRING_AUTH = True
+    AWS_QUERYSTRING_EXPIRE = 300        # seconds (5 min). Adjust as you want.
+   
+    
+    MEDIA_URL = f"https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/"
+   
+
+
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
