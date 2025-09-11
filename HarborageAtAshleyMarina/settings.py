@@ -144,8 +144,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 SECURE_SSL_REDIRECT = False
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 # Static files (collectstatic)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
