@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2nkex-50f4d=o3e*!apv6-n81pi+cts2(mxno%mw-1jvknlsd-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", "0") == in ("1", "true", "True")
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost','127.0.0.1','harborageatashleymarina.com','www.harborageatashleymarina.com']
 
@@ -183,7 +183,7 @@ if not DEBUG:
             "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
         },
     }
-    
+
     DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
     AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]
     AWS_S3_REGION_NAME = os.environ.get("AWS_S3_REGION_NAME", "us-east-1")
