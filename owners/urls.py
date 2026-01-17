@@ -16,5 +16,7 @@ urlpatterns = [
     path('post/<int:pk>/edit/', views.edit_post, name='edit_post'),
     path('post/<int:pk>/delete/', views.delete_post, name='delete_post'),
 
-    
+    path('owners/signup/', views.owners_signup, name='owners_signup'),
+    path('owners/pending/', views.owners_pending, name='owners_pending'),
+
 ]

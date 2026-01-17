@@ -1,7 +1,8 @@
 from django.shortcuts import get_object_or_404, render,redirect
 from django.contrib.auth.decorators import login_required,user_passes_test
-from .forms import CategoryForm,PostForm
+from .forms import CategoryForm,PostForm, OwnersSignupForm
 from .models import Category,Post
+from django.contrib.auth import login
 # Create your views here.
 @login_required(login_url='/accounts/login/')
 def owners(request):
@@ -103,3 +104,27 @@ def delete_category(request, pk):
         category.delete()
         return redirect('owners')
     return render(request, 'owners/confirm_delete.html', {'object': category, 'type': 'Category'})
+
+
+def owners_signup(request):
+    if request.user.is_authenticated:
+        return redirect("owners")
+
+    if request.method == "POST":
+        form = OwnersSignupForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+
+            # Log them in so you can show "pending" immediately
+            login(request, user)
+
+            # IMPORTANT: do NOT add to Owners group here
+            return redirect("owners")
+    else:
+        form = OwnersSignupForm()
+
+    return render(request, "owners/signup.html", {"form": form})
+
+
+def owners_pending(request):
+    return render(request, "owners/pending.html")

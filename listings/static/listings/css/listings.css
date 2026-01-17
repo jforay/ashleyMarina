@@ -6,3 +6,9 @@
     filter: brightness(0.97);
 }
 
+.listing-disclaimer {
+    font-size: 0.75rem;
+    color: #777;
+    margin-top: 2rem;
+    text-align: center;
+}

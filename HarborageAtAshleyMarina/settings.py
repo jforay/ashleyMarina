@@ -83,13 +83,23 @@ WSGI_APPLICATION = 'HarborageAtAshleyMarina.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# Default: use SQLite locally
 DATABASES = {
-    'default': dj_database_url.config(
-        default='postgresql://neondb_owner:npg_iC9Rphcz6VHb@ep-tight-resonance-adihkc2s-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require',
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+# If a DATABASE_URL is set (like on Heroku), use Postgres instead
+DATABASE_URL = os.environ.get('DATABASE_URL')
+if DATABASE_URL:
+    DATABASES['default'] = dj_database_url.config(
+        default=DATABASE_URL,
         conn_max_age=600,
         ssl_require=True
     )
-}
+
 
 
 # Password validation
@@ -179,7 +189,7 @@ if not DEBUG:
         "staticfiles": {"BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",},
     }
 
-    AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]
+    AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME","")
     AWS_S3_REGION_NAME = os.environ.get("AWS_S3_REGION_NAME", "us-east-1")
     AWS_S3_SIGNATURE_VERSION = "s3v4"
     AWS_S3_ADDRESSING_STYLE = "virtual"
