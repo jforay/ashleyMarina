@@ -61,6 +61,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'HarborageAtAshleyMarina.urls'
 
+PREPEND_WWW = True
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
