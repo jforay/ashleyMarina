@@ -1,8 +1,11 @@
-from django.shortcuts import get_object_or_404, render,redirect
-from django.contrib.auth.decorators import login_required,user_passes_test
-from .forms import CategoryForm,PostForm, OwnersSignupForm
-from .models import Category,Post
-from django.contrib.auth import login
+from django.shortcuts import get_object_or_404, render, redirect
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.models import User
+from django.core.mail import send_mail
+from django.conf import settings
+from .forms import CategoryForm, PostForm, OwnersSignupForm
+from .models import Category, Post
+
 # Create your views here.
 @login_required(login_url='/accounts/login/')
 def owners(request):
@@ -113,13 +116,25 @@ def owners_signup(request):
     if request.method == "POST":
         form = OwnersSignupForm(request.POST)
         if form.is_valid():
-            user = form.save()
+            user = form.save(commit=False)
+            user.is_active = False
+            user.save()
 
-            # Log them in so you can show "pending" immediately
-            login(request, user)
+            send_mail(
+                subject='New Account Request - Harborage at Ashley Marina',
+                message=(
+                    f'A new account request was submitted:\n\n'
+                    f'Name: {user.first_name} {user.last_name}\n'
+                    f'Username: {user.username}\n'
+                    f'Email: {user.email}\n\n'
+                    f'Log in as admin and visit /owners/pending-approvals/ to approve or deny.'
+                ),
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[settings.SITE_ADMIN_EMAIL],
+                fail_silently=True,
+            )
 
-            # IMPORTANT: do NOT add to Owners group here
-            return redirect("owners")
+            return redirect("owners_pending")
     else:
         form = OwnersSignupForm()
 
@@ -128,3 +143,38 @@ def owners_signup(request):
 
 def owners_pending(request):
     return render(request, "owners/pending.html")
+
+
+@user_passes_test(lambda u: u.is_superuser)
+def pending_approvals(request):
+    pending_users = User.objects.filter(is_active=False).order_by('date_joined')
+    return render(request, 'owners/pending_approvals.html', {'pending_users': pending_users})
+
+
+@user_passes_test(lambda u: u.is_superuser)
+def approve_user(request, pk):
+    if request.method == 'POST':
+        user = get_object_or_404(User, pk=pk)
+        user.is_active = True
+        user.save()
+        send_mail(
+            subject='Your Harborage at Ashley Marina account has been approved',
+            message=(
+                f'Hi {user.first_name},\n\n'
+                f'Your account has been approved. You can now log in at:\n'
+                f'https://harborageatashleymarina.com/accounts/login/\n\n'
+                f'Username: {user.username}'
+            ),
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[user.email],
+            fail_silently=True,
+        )
+    return redirect('pending_approvals')
+
+
+@user_passes_test(lambda u: u.is_superuser)
+def deny_user(request, pk):
+    if request.method == 'POST':
+        user = get_object_or_404(User, pk=pk)
+        user.delete()
+    return redirect('pending_approvals')

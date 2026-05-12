@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid p-0">
+    <div style="background-color: #0078A0; padding: 2rem;">
+        <h2 class="marina-name text-center">Pending Account Approvals</h2>
+    </div>
+</div>
+
+<div class="container py-4" style="max-width: 800px;">
+    {% if pending_users %}
+        <p class="text-muted">{{ pending_users|length }} account request{{ pending_users|length|pluralize }} waiting for approval.</p>
+        {% for user in pending_users %}
+        <div class="card mb-3 shadow-sm">
+            <div class="card-body d-flex justify-content-between align-items-center">
+                <div>
+                    <strong>{{ user.first_name }} {{ user.last_name }}</strong>
+                    <span class="text-muted ml-2">({{ user.username }})</span><br>
+                    <small class="text-muted">{{ user.email }}</small><br>
+                    <small class="text-muted">Requested: {{ user.date_joined|date:"M j, Y" }}</small>
+                </div>
+                <div class="d-flex" style="gap: 0.5rem;">
+                    <form method="post" action="{% url 'approve_user' user.pk %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-success btn-sm">Approve</button>
+                    </form>
+                    <form method="post" action="{% url 'deny_user' user.pk %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger btn-sm"
+                            onclick="return confirm('Deny and delete this account request for {{ user.first_name }} {{ user.last_name }}?')">
+                            Deny
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="card p-4 text-center">
+            <p class="text-muted mb-0">No pending account requests.</p>
+        </div>
+    {% endif %}
+
+    <div class="mt-3">
+        <a href="{% url 'owners' %}" class="btn btn-marina">Back to Owners Forum</a>
+    </div>
+</div>
+{% endblock %}

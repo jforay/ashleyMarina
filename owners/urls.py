@@ -18,5 +18,8 @@ urlpatterns = [
 
     path('owners/signup/', views.owners_signup, name='owners_signup'),
     path('owners/pending/', views.owners_pending, name='owners_pending'),
+    path('pending-approvals/', views.pending_approvals, name='pending_approvals'),
+    path('approve/<int:pk>/', views.approve_user, name='approve_user'),
+    path('deny/<int:pk>/', views.deny_user, name='deny_user'),
 
 ]

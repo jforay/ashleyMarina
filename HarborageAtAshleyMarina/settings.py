@@ -216,3 +216,4 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = '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'
 DEFAULT_FROM_EMAIL = 'no-reply@harborageatashleymarina.com'
+SITE_ADMIN_EMAIL = 'joe4a83@gmail.com'

@@ -12,6 +12,7 @@
   {% if user.is_superuser %}
     <div class="text-center mb-4">
       <a href="{% url 'create_category' %}" class="btn btn-outline-primary">+ Create New Category</a>
+      <a href="{% url 'pending_approvals' %}" class="btn btn-outline-warning ml-2">Pending Approvals</a>
     </div>
   {% endif %}
 
